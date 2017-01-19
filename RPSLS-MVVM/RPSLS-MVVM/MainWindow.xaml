@@ -1,0 +1,34 @@
+﻿<Window x:Class="RPSLS_MVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPSLS_MVVM"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Column="0" Command="{Binding RockCommand}">Rock</Button>
+            <Button Grid.Column="1" Command="{Binding PaperCommand}">Paper</Button>
+            <Button Grid.Column="2" Command="{Binding ScissorsCommand}">Scissors</Button>
+            <Button Grid.Column="3" Command="{Binding LizardCommand}">Lizard</Button>
+            <Button Grid.Column="4" Command="{Binding SpockCommand}">Spock</Button>
+        </Grid>
+
+        <ListBox Grid.Row="1" ItemsSource="{Binding Results}"></ListBox>
+    </Grid>
+</Window>
